@@ -18,6 +18,10 @@ jobs:
     # Use a gitHub-hosted ubuntu virtual machine
     runs-on: ubuntu-latest
 
+   strategy:
+      matrix:
+        node-version: [20, 22, 24]
+
     steps:
       # Download your repository's code
       - name: Checkout code
@@ -27,7 +31,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       # Install dependencies using the exact lockfile versions
       - name: Install dependencies
