@@ -6,11 +6,11 @@ on:
   # Run on every push to any branch
   push:
     branches:
-    - '**'
+      - '**'
   # Run on pull requests targeting the main branch
   pull_request:
-   branches:
-    - main
+    branches:
+      - main
 
 jobs:
   # Define a job called 'test'
@@ -18,7 +18,7 @@ jobs:
     # Use a gitHub-hosted ubuntu virtual machine
     runs-on: ubuntu-latest
 
-   strategy:
+    strategy:
       matrix:
         node-version: [20, 22, 24]
 
