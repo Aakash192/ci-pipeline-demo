@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
 //Return a JSON health check response
 app.get('/health', (req, res) => {
-    res.json({status: 'healthy'});
+    res.json({status: 'ok'});
 });
 
 // Export the app so tests can import it without starting a server
